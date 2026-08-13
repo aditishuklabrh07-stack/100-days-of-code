@@ -1,0 +1,9 @@
+#include<stdio.h>
+int main(){
+    int n,sum ;
+    printf("The sum of first n natural numbers is given by :n*n+1/2");
+    printf("Enter the no of natural numbers whose sum you want");
+    scanf("%d",&n);
+    sum=n*(n+1)/2;
+    printf("The sum of first n natural numbers is:%d",sum);
+}
