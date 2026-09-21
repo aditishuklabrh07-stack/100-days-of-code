@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int r, c;
+    printf("Enter rows and columns: ");
+    scanf("%d %d", &r, &c);
+
+    int mat[r][c];
+    printf("Enter elements:\n");
+    for (int i = 0; i < r; i++)
+        for (int j = 0; j < c; j++) scanf("%d", &mat[i][j]);
+
+    printf("Diagonal Traversal:\n");
+    for (int line = 1; line <= (r + c - 1); line++) {
+        int start_col = (0 > line - r) ? 0 : line - r;
+        int count = (line < c - start_col) ? line : c - start_col;
+        if (count > r - (line - start_col - 1)) count = r - (line - start_col - 1);
+
+        for (int j = 0; j < count; j++) {
+            int min_row = (line - 1 < r - 1) ? line - 1 : r - 1;
+            int min_col = start_col + j;
+            printf("%d ", mat[min_row - j][min_col]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
