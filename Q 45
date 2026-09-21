@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    double sum = 0.0;
+    printf("Enter n: ");
+    scanf("%d", &n);
+
+    int num = 2, den = 3, add_den = 4;
+    for (int i = 1; i <= n; i++) {
+        sum += (double)num / den;
+        num += 2;
+        den += add_den;
+        add_den += 2;
+    }
+
+    printf("Sum = %.4lf\n", sum);
+    return 0;
+}
