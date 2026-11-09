@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main()
+{
+    char s[100], temp;
+    int i, j, k;
+
+    printf("Enter a sentence: ");
+    scanf(" %[^\n]", s);
+
+    for(i = 0; s[i] != '\0'; i++)
+    {
+        if(s[i] != ' ')
+        {
+            j = i;
+
+            while(s[i] != ' ' && s[i] != '\0')
+            {
+                i++;
+            }
+
+            k = i - 1;
+
+            while(j < k)
+            {
+                temp = s[j];
+                s[j] = s[k];
+                s[k] = temp;
+
+                j++;
+                k--;
+            }
+        }
+    }
+
+    printf("%s", s);
+
+    return 0;
+}
