@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+int main()
+{
+    char s1[100], s2[100], temp[200];
+    int i, j, len1 = 0, len2 = 0, found = 0;
+
+    printf("Enter first string: ");
+    scanf("%s", s1);
+
+    printf("Enter second string: ");
+    scanf("%s", s2);
+
+    // Calculate length of first string
+    for(i = 0; s1[i] != '\0'; i++)
+        len1++;
+
+    // Calculate length of second string
+    for(i = 0; s2[i] != '\0'; i++)
+        len2++;
+
+    if(len1 == len2)
+    {
+        // Repeat first string twice
+        for(i = 0; i < len1; i++)
+            num[i] = s1[i];
+
+        for(i = 0; i < len1; i++)
+            num[len1 + i] = s1[i];
+
+        num[2 * len1] = '\0';
+
+        // Check whether s2 exists in temp
+        for(i = 0; i < len1; i++)
+        {
+            for(j = 0; j < len2; j++)
+            {
+                if(num[i + j] != s2[j])
+                    break;
+            }
+
+            if(j == len2)
+            {
+                found = 1;
+                break;
+            }
+        }
+    }
+
+    if(found == 1)
+        printf("Rotation");
+    else
+        printf("No Rotation found");
+
+    return 0;
+}
