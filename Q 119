@@ -1,0 +1,31 @@
+
+#include <stdio.h>
+
+int main()
+{
+    int n, i, num;
+    int sum = 0, total = 0;
+
+    printf("Enter size: ");
+    scanf("%d", &n);
+
+    int arr[n];
+
+    printf("Enter elements: ");
+    for(i = 0; i < n; i++)
+    {
+        scanf("%d", &arr[i]);
+        sum = sum + arr[i];
+    }
+
+    for(i = 1; i < n; i++)
+    {
+        total = total + i;
+    }
+
+    num = sum - total;
+
+    printf("%d", num);
+
+    return 0;
+}
